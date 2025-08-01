@@ -13,6 +13,46 @@
       a:hover {
         color: red; /* Verandert de kleur als je erover beweegt */
       }
+     .button-row {
+        display: flex;
+        gap: 40px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 30px 0;
+      }
+      
+      .button-row a {
+        text-decoration: none;
+      }
+      
+      .image-button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        width: 400px;
+        height: 250px;
+        background-color: #ff4444;
+        color: white;
+        font-size: 20px;
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        text-align: center;
+      }
+      
+      .image-button:hover {
+        background-color: #cc0000;
+      }
+      
+      .image-button img {
+        max-width: 100px;
+        height: auto;
+        margin-bottom: 10px;
+      }
+      
     </style>
   </head>
   <body>
@@ -20,10 +60,32 @@
       <a href="index.html">Home</a> |
       <a href="leaderboard.html">Leaderboard</a> |
       <a href="ratingcategories.html">YourDragon</a> |
+      <a href="tournaments.html">Tournaments</a> |
     </nav>
     <h1><p style="text-align:center;">RK Dragons Elite Team</p></h1>
     <h2><p style="text-align:center;">A home for all Dragons who enjoy RK</p></h2>
     <br>
     Welcome, this is the homepage of the Rk Dragons website. 
+    <div class="button-row">
+      <a href="leaderboard.html">
+        <button class="image-button">
+          <img src="Dragon7.png" alt="Leaderboard">
+          <span>Go to the leaderboards of our top contributors</span>
+        </button>
+      </a>
+      <a href="ratingcategories.html">
+        <button class="image-button">
+          <img src="Dragon2.jpg" alt="Rating">
+          <span>Your Dragon based on your rating</span>
+        </button>
+      </a>
+      <a href="tournaments.html">
+        <button class="image-button">
+          <img src="Dragon4.jpg" alt="Tournaments">
+          <span>Past, Present and Future inter and inner teamtournaments</span>
+        </button>
+      </a>
+    </div>
+
   </body>
 </html>
