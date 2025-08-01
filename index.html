@@ -13,27 +13,46 @@
       a:hover {
         color: red; /* Verandert de kleur als je erover beweegt */
       }
-      menu {
+     .button-row {
         display: flex;
-        gap: 40px;
+        gap: 20px;
+        flex-wrap: wrap;
         justify-content: center;
-        margin: 20px;
+        margin: 30px 0;
       }
-
-      .menu a button {
-        font-size: 16px;
-        padding: 40px 24px;
-        border: none;
-        border-radius: 10px;
-        background-color: red; 
+      
+      .button-row a {
+        text-decoration: none;
+      }
+      
+      .image-button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        width: 180px;
+        height: 180px;
+        background-color: #ff4444;
         color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 15px;
         cursor: pointer;
         transition: background-color 0.3s;
+        text-align: center;
       }
-
-      .menu a button:hover {
-        background-color: #45a049;
+      
+      .image-button:hover {
+        background-color: #cc0000;
       }
+      
+      .image-button img {
+        max-width: 60px;
+        height: auto;
+        margin-bottom: 10px;
+      }
+      
     </style>
   </head>
   <body>
@@ -47,10 +66,25 @@
     <h2><p style="text-align:center;">A home for all Dragons who enjoy RK</p></h2>
     <br>
     Welcome, this is the homepage of the Rk Dragons website. 
-    <div class="menu">
-      <a href="leaderboard.html"><button>Go to leaderboards to see our top contributors</button></a>
-      <a href="ratingcategories.html"><button>Your Dragon based on your rating</button></a>
-      <a href="tournaments.html"><button>Past, present and future tournaments (inner and inter team competition </button></a>
+    <div class="button-row">
+      <a href="leaderboard.html">
+        <button class="image-button">
+          <img src="Dragon1.png" alt="Leaderboard">
+          <span>Top Contributors</span>
+        </button>
+      </a>
+      <a href="ratingcategories.html">
+        <button class="image-button">
+          <img src="Dragon2.png" alt="Rating">
+          <span>Your Dragon</span>
+        </button>
+      </a>
+      <a href="tournaments.html">
+        <button class="image-button">
+          <img src="Dragon3.png" alt="Tournaments">
+          <span>Tournaments</span>
+        </button>
+      </a>
     </div>
 
   </body>
