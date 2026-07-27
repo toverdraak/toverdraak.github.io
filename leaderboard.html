@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <title>Leaderboard - RK Dragons Elite Team</title>
     <style>
       body {
-        background: linear-gradient(135deg, #1a1c23 0%, #0f2042 100%);
+        /* Achtergrond aangepast: eindigt nu iets lichter blauw voor een beter verloop */
+        background: linear-gradient(135deg, #1a1c23 0%, #1a2d54 100%);
         background-attachment: fixed;
         margin: 0;
         padding: 40px 20px;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Professioneel lettertype */
-        color: #e0e6ed; /* Zachte witte tekstkleur voor perfect contrast */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #e0e6ed; /* Zachte witte basistekst */
         line-height: 1.6;
       }
       
@@ -23,11 +26,11 @@
         margin: 0 15px;
         transition: color 0.2s;
         font-weight: 500;
+        text-decoration: none;
       }
 
       nav a:hover {
         color: #ff4444;
-      }
       }
       
       h1, h2 {
@@ -36,17 +39,23 @@
       
       h1 {
         margin-bottom: 30px;
+        color: #ffffff;
+      }
+
+      h2 {
+        color: #ff4444;
+        margin-top: 5px;
       }
 
       /* --- PODIUM STYLING --- */
       .podium-container {
         display: flex;
         justify-content: center;
-        align-items: flex-end; /* Keeps the bars on the ground */
-        gap: 15px;
+        align-items: flex-end;
+        gap: 20px;
         max-width: 600px;
-        margin: 20px auto 40px auto;
-        height: 180px; /* Fixed height for the podium */
+        margin: 30px auto;
+        height: 190px;
       }
 
       .podium-place {
@@ -57,7 +66,6 @@
         text-align: center;
       }
 
-      /* Names above the bars */
       .podium-user {
         font-size: 14px;
         font-weight: bold;
@@ -67,52 +75,63 @@
         text-overflow: ellipsis;
         width: 100%;
       }
+
+      /* Wit gemaakte links op het podium voor perfecte leesbaarheid */
+      .podium-user a {
+        color: #ffffff;
+        text-decoration: none;
+      }
+      .podium-user a:hover {
+        text-decoration: underline;
+      }
       
+      /* Heldere scorekleur */
       .podium-score {
-        font-size: 12px;
-        color: #555;
+        font-size: 13px;
+        color: #cbd5e0;
         margin-bottom: 5px;
+        font-weight: 600;
       }
 
-      /* The physical bars */
       .podium-bar {
         width: 100%;
         border-radius: 8px 8px 0 0;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 24px;
+        font-size: 26px;
         font-weight: bold;
-        color: #333;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        color: #1a1c23; /* Donkere cijfers in de balken */
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
       }
 
-      /* Different heights and gradient colors per position */
       .place-1 {
-        height: 110px;
-        background: linear-gradient(to top, #e5a93b, #ffd700); /* Gold */
+        height: 120px;
+        background: linear-gradient(to top, #e5a93b, #ffd700);
       }
 
       .place-2 {
-        height: 80px;
-        background: linear-gradient(to top, #b0b0b0, #cccccc); /* Silver */
+        height: 90px;
+        background: linear-gradient(to top, #b0b0b0, #cccccc);
       }
 
       .place-3 {
-        height: 55px;
-        background: linear-gradient(to top, #a05a2c, #cd7f32); /* Bronze */
+        height: 65px;
+        background: linear-gradient(to top, #a05a2c, #cd7f32);
       }
       
-      /* --- TABLE STYLING --- */
+      /* --- TABEL STYLING --- */
       .leaderboard-table {
         border-collapse: collapse;
         width: 100%;
         max-width: 600px;
-        margin: 0 auto 50px auto;
-        background-color: white;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        border-radius: 8px;
+        margin: 0 auto 60px auto;
+        /* Donkere 'glas'-look in plaats van fel wit */
+        background-color: rgba(255, 255, 255, 0.04);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        border-radius: 12px;
         overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.08);
       }
       
       .leaderboard-table th, 
@@ -122,17 +141,44 @@
       }
       
       .leaderboard-table th {
-        background-color: #333;
-        color: white;
+        background-color: rgba(0, 0, 0, 0.4);
+        color: #ff4444; /* Rode accentkleur voor de tabelkoppen */
         font-weight: bold;
+        font-size: 1.05em;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .leaderboard-table td {
+        color: #e2e8f0;
+      }
+
+      /* Links in de tabel zijn nu wit en worden rood bij hover */
+      .leaderboard-table td a {
+        color: #ffffff;
+        text-decoration: none;
+      }
+
+      .leaderboard-table td a:hover {
+        color: #ff4444;
+        text-decoration: underline;
       }
       
+      /* Subtiele zebra-strepen aangepast aan de donkere achtergrond */
       .leaderboard-table tr:nth-child(even) {
-        background-color: #f9f9f9;
+        background-color: rgba(255, 255, 255, 0.02);
       }
       
       .leaderboard-table tr:hover {
-        background-color: #f1f1f1;
+        background-color: rgba(255, 255, 255, 0.07);
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 60px;
+        color: #718096;
+        font-size: 0.9em;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 20px;
       }
     </style>
   </head>
@@ -140,9 +186,8 @@
     <nav>
       <a href="index.html">Home</a> |
       <a href="leaderboard.html">Leaderboard</a> |
-      <a href="tournaments.html">Tournaments</a> |
+      <a href="tournaments.html">Tournaments</a>
     </nav>
-    <hr style="margin-bottom: 10px;">
 
     <h1>Overview of all leaderboards</h1>
     
