@@ -3,15 +3,96 @@
   <head>
     <style>
       body {
+        /* De lichtblauwe achtergrond die je oké vond, met een modern lettertype */
         background-color: lightblue;
+        margin: 0;
+        padding: 20px;
+        font-family: sans-serif;
+        color: #333;
       }
+      
       a {
-        color: black; /* Verander dit naar elke gewenste kleur */
-        text-decoration: none; /* Optioneel: verwijdert de onderstreep */
+        color: black; 
+        text-decoration: none; 
       }
 
       a:hover {
-        color: red; /* Verandert de kleur als je erover beweegt */
+        color: red; 
+      }
+
+      h1, h2 {
+        text-align: center;
+      }
+
+      h1 {
+        margin-bottom: 30px;
+      }
+
+      h2 {
+        margin-top: 40px;
+        color: #222;
+      }
+
+      /* Styling voor de toernooikaart */
+      .tournament-card {
+        background-color: white;
+        max-width: 550px;
+        margin: 20px auto;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .tournament-title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 0;
+        margin-bottom: 15px;
+        color: #111;
+        text-align: center;
+      }
+
+      /* Grid voor de statistieken */
+      .tournament-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-bottom: 20px;
+        font-size: 16px;
+      }
+
+      .stat-item {
+        background-color: #f5f9fa;
+        padding: 10px;
+        border-radius: 6px;
+        border-left: 4px solid #d32f2f; /* Rode indicatorlijn */
+      }
+
+      .stat-label {
+        font-size: 12px;
+        text-transform: uppercase;
+        color: #666;
+        margin-bottom: 2px;
+      }
+
+      .stat-value {
+        font-weight: bold;
+      }
+
+      /* Knop om naar Lichess te gaan */
+      .lichess-btn {
+        display: block;
+        text-align: center;
+        background-color: #d32f2f;
+        color: white !important;
+        padding: 12px;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: background-color 0.3s;
+      }
+
+      .lichess-btn:hover {
+        background-color: #b71c1c;
       }
     </style>
   </head>
@@ -22,12 +103,49 @@
       <a href="ratingcategories.html">YourDragon</a> |
       <a href="tournaments.html">Tournaments</a> |
     </nav>
-    <h1><p style="text-align:center;">Tournaments</p></h1>
-      sorry but this tab is currently outdated, working on improving this tab in the future thx for your patience.
+    <hr style="margin-bottom: 10px;">
+
+    <h1>Tournaments</h1>
+    
     <h2>Inter Teamtournaments</h2>
-      <a href="https://lichess.org/tournament/KoG4Upnu" target="_blank">MONEY Christmas Special Teamcompetitie 31 augustus (click to join)</a>
-    <h2>Inner Teamtournaments</h2>
-      <div><a href="https://lichess.org/tournament/LfEO84LP" target="_blank">Inner Team tournament 30 augustus (click to join)</a></div>
-      <div><a href="https://lichess.org/tournament/cEUL9KlM" target="_blank">Inner Team tournament 30 augustus (click to join)</a></div>
-      <div><a href="https://lichess.org/tournament/GJnL4dIM" target="_blank">Inner Team tournament 30 augustus (click to join)</a></div>
+
+    <!-- Start van de toernooikaart -->
+    <div class="tournament-card">
+      <div class="tournament-title">MONEY Christmas Special Teamcompetitie (31 augustus)</div>
       
+      <div class="tournament-stats">
+        <div class="stat-item">
+          <div class="stat-label">Resultaat</div>
+          <div class="stat-value">4e Plaats</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">Totaal Punten</div>
+          <div class="stat-value">915 punten</div>
+        </div>
+        <div class="stat-item" style="grid-column: span 2;">
+          <div class="stat-label">Top Contributor</div>
+          <div class="stat-value">
+            <a href="https://lichess.org" target="_blank" style="color: #d32f2f; text-decoration: underline;">
+              @cemalziya61
+            </a> 
+            (294 punten)
+          </div>
+        </div>
+        <div class="stat-item" style="grid-column: span 2;">
+          <div class="stat-label">Deelnemers</div>
+          <div class="stat-value">12 teamleden hebben meegespeeld</div>
+        </div>
+      </div>
+
+      <a href="https://lichess.org/tournament/KoG4Upnu" target="_blank" class="lichess-btn">
+        Bekijk toernooi op Lichess ↗
+      </a>
+    </div>
+    <!-- Einde van de toernooikaart -->
+
+    <footer style="text-align: center; margin-top: 60px; color: #333; font-size: 0.9em;">
+      <hr style="margin-bottom: 10px;">
+      © 2022 RK Dragons Elite Team | Created by ToverDraak 🐉
+    </footer>
+  </body>
+</html>
