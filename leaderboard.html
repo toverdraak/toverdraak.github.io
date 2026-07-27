@@ -3,15 +3,70 @@
   <head>
     <style>
       body {
-        background-color: white;
+        /* Dezelfde mooie achtergrond als de homepage */
+        background: linear-gradient(135deg, #cce7f0 0%, #add8e6 100%);
+        background-repeat: repeat;
+        background-attachment: fixed;
+        margin: 0;
+        padding: 20px;
+        font-family: sans-serif; /* Moderner lettertype */
+        color: #333;
       }
+      
+      nav {
+        margin-bottom: 20px;
+      }
+      
       a {
-        color: black; /* Verander dit naar elke gewenste kleur */
-        text-decoration: none; /* Optioneel: verwijdert de onderstreep */
+        color: black; 
+        text-decoration: none; 
       }
 
       a:hover {
         color: darkred;
+        text-decoration: underline; /* Subtiele indicatie dat het een link is */
+      }
+      
+      h1, h2 {
+        text-align: center;
+      }
+      
+      h1 {
+        margin-bottom: 30px;
+      }
+      
+      /* Moderne tabel styling */
+      .leaderboard-table {
+        border-collapse: collapse;
+        width: 100%;
+        max-width: 600px; /* Zorgt dat de tabel compact en leesbaar blijft */
+        margin: 0 auto 50px auto; /* Centreert de tabel en geeft ruimte aan de onderkant */
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Zachte schaduw */
+        border-radius: 8px;
+        overflow: hidden; /* Zorgt dat de hoeken mooi rond blijven */
+      }
+      
+      .leaderboard-table th, 
+      .leaderboard-table td {
+        padding: 12px 15px;
+        text-align: center;
+      }
+      
+      .leaderboard-table th {
+        background-color: #333;
+        color: white;
+        font-weight: bold;
+      }
+      
+      /* Zebra-strepen: elke even rij krijgt een heel lichtgrijze achtergrond */
+      .leaderboard-table tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+      
+      /* Subtiele highlight als je met de muis over een rij beweegt */
+      .leaderboard-table tr:hover {
+        background-color: #f1f1f1;
       }
     </style>
   </head>
@@ -21,58 +76,65 @@
       <a href="leaderboard.html">Leaderboard</a> |
       <a href="tournaments.html">Tournaments</a> |
     </nav>
-    <h1><p style="text-align:center;">Overview off all leaderboards</p></h1>
-    <br>
-    <br>
-    <h2><p style="text-align:center;">Leaderboard of highest peak ratings</p></h2>
-    <table border="0" style="border-collapse: collapse; width: 100%; text-align: center;">
-      <tr><td>1</td><td><a href="https://lichess.org/@/racing_kings_bot" target="_blank">racing_kings_bot</a></td><td>2603</td></tr>
-      <tr><td>2</td><td><a href="https://lichess.org/@/M-A01" target="_blank">M-A01</a></td><td>2519</td></tr>
-      <tr><td>3</td><td><a href="https://lichess.org/@/eNErGyOFbEiNGbOT" target="_blank">eNErGyOFbEiNGbOT</a></td><td>2499</td></tr>
-      <tr><td>4</td><td><a href="https://lichess.org/@/NilSeWon" target="_blank">NilSeWon</a></td><td>2465</td></tr>
-      <tr><td>5</td><td><a href="https://lichess.org/@/Ali_2025" target="_blank">Ali_2025</a></td><td>2460</td></tr>
-      <tr><td>6</td><td><a href="https://lichess.org/@/AtoAntRac" target="_blank">AtoAntRac</a></td><td>2444</td></tr>
-      <tr><td>7</td><td><a href="https://lichess.org/@/aliakbar_2025" target="_blank">aliakbar_2025</a></td><td>2429</td></tr>
-      <tr><td>8</td><td><a href="https://lichess.org/@/cr0c0d1l3" target="_blank">cr0c0d1l3</a></td><td>2422</td></tr>
-      <tr><td>9</td><td><a href="https://lichess.org/@/OSCARSM80" target="_blank">OSCARSM80</a></td><td>2402</td></tr>
-      <tr><td>10</td><td><a href="https://lichess.org/@/Peanutbutter12345" target="_blank">Peanutbutter12345</a></td><td>2380</td></tr>
-      <tr><td>11</td><td><a href="https://lichess.org/@/RKWC_Legend_Dragon" target="_blank">RKWC_Legend_Dragon</a></td><td>2378</td></tr>
-      <tr><td>12</td><td><a href="https://lichess.org/@/Gleb_Momot" target="_blank">Gleb_Momot</a></td><td>2376</td></tr>
-      <tr><td>13</td><td><a href="https://lichess.org/@/CemalZiya027" target="_blank">CemalZiya027</a></td><td>2358</td></tr>
-      <tr><td>14</td><td><a href="https://lichess.org/@/Gautham_A" target="_blank">Gautham_A</a></td><td>2350</td></tr>
-      <tr><td>15</td><td><a href="https://lichess.org/@/alston_b0y" target="_blank">alston_b0y</a></td><td>2345</td></tr>
-      <tr><td>16</td><td><a href="https://lichess.org/@/LC-Racing" target="_blank">LC-Racing</a></td><td>2343</td></tr>
-      <tr><td>17</td><td><a href="https://lichess.org/@/Rithik_RKWC" target="_blank">Rithik_RKWC</a></td><td>2341</td></tr>
-      <tr><td>18</td><td><a href="https://lichess.org/@/sachmaty8" target="_blank">sachmaty8</a></td><td>2337</td></tr>
-      <tr><td>19</td><td><a href="https://lichess.org/@/GKR_gabriel" target="_blank">GKR_gabriel</a></td><td>2330</td></tr>
-      <tr><td>20</td><td><a href="https://lichess.org/@/cemalziya61" target="_blank">cemalziya61</a></td><td>2327</td></tr>
+    <hr style="margin-bottom: 10px;">
 
-
-
-      a
+    <h1>Overview of all leaderboards</h1>
+    
+    <h2>Leaderboard of highest peak ratings</h2>
+    <table class="leaderboard-table">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Player</th>
+          <th>Rating</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td><a href="https://lichess.org/@/racing_kings_bot" target="_blank">racing_kings_bot</a></td><td>2603</td></tr>
+        <tr><td>2</td><td><a href="https://lichess.org/@/M-A01" target="_blank">M-A01</a></td><td>2519</td></tr>
+        <tr><td>3</td><td><a href="https://lichess.org/@/eNErGyOFbEiNGbOT" target="_blank">eNErGyOFbEiNGbOT</a></td><td>2499</td></tr>
+        <tr><td>4</td><td><a href="https://lichess.org/@/NilSeWon" target="_blank">NilSeWon</a></td><td>2465</td></tr>
+        <tr><td>5</td><td><a href="https://lichess.org/@/Ali_2025" target="_blank">Ali_2025</a></td><td>2460</td></tr>
+        <tr><td>6</td><td><a href="https://lichess.org/@/AtoAntRac" target="_blank">AtoAntRac</a></td><td>2444</td></tr>
+        <tr><td>7</td><td><a href="https://lichess.org/@/aliakbar_2025" target="_blank">aliakbar_2025</a></td><td>2429</td></tr>
+        <tr><td>8</td><td><a href="https://lichess.org/@/cr0c0d1l3" target="_blank">cr0c0d1l3</a></td><td>2422</td></tr>
+        <tr><td>9</td><td><a href="https://lichess.org/@/OSCARSM80" target="_blank">OSCARSM80</a></td><td>2402</td></tr>
+        <tr><td>10</td><td><a href="https://lichess.org/@/Peanutbutter12345" target="_blank">Peanutbutter12345</a></td><td>2380</td></tr>
+        <tr><td>11</td><td><a href="https://lichess.org/@/RKWC_Legend_Dragon" target="_blank">RKWC_Legend_Dragon</a></td><td>2378</td></tr>
+        <tr><td>12</td><td><a href="https://lichess.org/@/Gleb_Momot" target="_blank">Gleb_Momot</a></td><td>2376</td></tr>
+        <tr><td>13</td><td><a href="https://lichess.org/@/CemalZiya027" target="_blank">CemalZiya027</a></td><td>2358</td></tr>
+        <tr><td>14</td><td><a href="https://lichess.org/@/Gautham_A" target="_blank">Gautham_A</a></td><td>2350</td></tr>
+        <tr><td>15</td><td><a href="https://lichess.org/@/alston_b0y" target="_blank">alston_b0y</a></td><td>2345</td></tr>
+        <tr><td>16</td><td><a href="https://lichess.org/@/LC-Racing" target="_blank">LC-Racing</a></td><td>2343</td></tr>
+        <tr><td>17</td><td><a href="https://lichess.org/@/Rithik_RKWC" target="_blank">Rithik_RKWC</a></td><td>2341</td></tr>
+        <tr><td>18</td><td><a href="https://lichess.org/@/sachmaty8" target="_blank">sachmaty8</a></td><td>2337</td></tr>
+        <tr><td>19</td><td><a href="https://lichess.org/@/GKR_gabriel" target="_blank">GKR_gabriel</a></td><td>2330</td></tr>
+        <tr><td>20</td><td><a href="https://lichess.org/@/cemalziya61" target="_blank">cemalziya61</a></td><td>2327</td></tr>
+      </tbody>
     </table>
-    <br>
-    <br>
-    <br>
-    <h2><p style="text-align:center;">Leaderboard of most points gained in team tournaments</p></h2>
-    <table border="1" style="border-collapse: collapse; width: 100%; text-align: center;">
-      <tr>
-        <th>Rank</th>
-        <th>Player</th>
-        <th>Points made</th>
-      </tr>
+
+    <h2>Leaderboard of most points gained in team tournaments</h2>
+    <table class="leaderboard-table">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Player</th>
+          <th>Points made</th>
+        </tr>
+      </thead>
+      <tbody>
         <tr><td>1</td><td><a href="https://lichess.org/@/toverdraak" target="_blank">toverdraak</a></td><td>3654</td></tr>
-        <tr><td>2</td><td><a href="https://lichess.org/@/ SpacialChess        " target="_blank"> SpacialChess        </a></td><td>1763</td></tr>
-        <tr><td>3</td><td><a href="https://lichess.org/@/     annanddeepu       " target="_blank">     annanddeepu       </a></td><td>1744</td></tr>
-        <tr><td>4</td><td><a href="https://lichess.org/@/    Ritvikv15 " target="_blank">    Ritvikv15 </a></td><td>1672</td></tr>
-        <tr><td>5</td><td><a href="https://lichess.org/@/ kingsofkings       " target="_blank"> kingsofkings       </a></td><td>1240</td></tr>
-        <tr><td>6</td><td><a href="https://lichess.org/@/ gmaaragm" target="_blank"> gmaaragm</a></td><td>950</td></tr>
-        <tr><td>7</td><td><a href="https://lichess.org/@/ CemalZiya027  " target="_blank"> CemalZiya027  </a></td><td>848</td></tr>
-        <tr><td>8</td><td><a href="https://lichess.org/@/  Advik2003" target="_blank">  Advik2003</a></td><td>728</td></tr>
-        <tr><td>9</td><td><a href="https://lichess.org/@/     ollieparker" target="_blank">     ollieparker</a></td><td>697</td></tr>
-        <tr><td>10</td><td><a href="https://lichess.org/@/ lahan2014    " target="_blank"> lahan2014    </a></td><td>563</td></tr>
-        <tr><td>11</td><td><a href="https://lichess.org/@/   aarish2805  " target="_blank">   aarish2805  </a></td><td>524</td></tr>
-        <tr><td>12</td><td><a href="https://lichess.org/@/ CagiNL                   " target="_blank"> CagiNL                   </a></td><td>348</td></tr>
+        <tr><td>2</td><td><a href="https://lichess.org" target="_blank">SpacialChess</a></td><td>1763</td></tr>
+        <tr><td>3</td><td><a href="https://lichess.org" target="_blank">annanddeepu</a></td><td>1744</td></tr>
+        <tr><td>4</td><td><a href="https://lichess.org" target="_blank">Ritvikv15</a></td><td>1672</td></tr>
+        <tr><td>5</td><td><a href="https://lichess.org" target="_blank">kingsofkings</a></td><td>1240</td></tr>
+        <tr><td>6</td><td><a href="https://lichess.org" target="_blank">gmaaragm</a></td><td>950</td></tr>
+        <tr><td>7</td><td><a href="https://lichess.org/@/CemalZiya027" target="_blank">CemalZiya027</a></td><td>848</td></tr>
+        <tr><td>8</td><td><a href="https://lichess.org" target="_blank">Advik2003</a></td><td>728</td></tr>
+        <tr><td>9</td><td><a href="https://lichess.org" target="_blank">ollieparker</a></td><td>697</td></tr>
+        <tr><td>10</td><td><a href="https://lichess.org" target="_blank">lahan2014</a></td><td>563</td></tr>
+        <tr><td>11</td><td><a href="https://lichess.org" target="_blank">aarish2805</a></td><td>524</td></tr>
+        <tr><td>12</td><td><a href="https://lichess.org" target="_blank">CagiNL</a></td><td>348</td></tr>
         <tr><td>13</td><td><a href="https://lichess.org/@/deydinov" target="_blank">deydinov</a></td><td>308</td></tr>
         <tr><td>14</td><td><a href="https://lichess.org/@/Nichicrack" target="_blank">Nichicrack</a></td><td>280</td></tr>
         <tr><td>15</td><td><a href="https://lichess.org/@/cr0c0d1l3" target="_blank">cr0c0d1l3</a></td><td>265</td></tr>
@@ -81,145 +143,27 @@
         <tr><td>18</td><td><a href="https://lichess.org/@/TFB01" target="_blank">TFB01</a></td><td>192</td></tr>
         <tr><td>19</td><td><a href="https://lichess.org/@/Peanutbutter12345" target="_blank">Peanutbutter12345</a></td><td>182</td></tr>
         <tr><td>20</td><td><a href="https://lichess.org/@/Tetiksh1Agrawal" target="_blank">Tetiksh1Agrawal</a></td><td>180</td></tr>
-        <tr><td>21</td><td><a href="https://lichess.org/@/   NilSeWon " target="_blank">   NilSeWon </a></td><td>173</td></tr>
-        <tr><td>22</td><td><a href="https://lichess.org/@/   ELSPEED654773   " target="_blank">   ELSPEED654773   </a></td><td>170</td></tr>
-        <tr><td>23</td><td><a href="https://lichess.org/@/ tomkoorstra          " target="_blank"> tomkoorstra          </a></td><td>167</td></tr>
+        <tr><td>21</td><td><a href="https://lichess.org/@/NilSeWon" target="_blank">NilSeWon</a></td><td>173</td></tr>
+        <tr><td>22</td><td><a href="https://lichess.org" target="_blank">ELSPEED654773</a></td><td>170</td></tr>
+        <tr><td>23</td><td><a href="https://lichess.org" target="_blank">tomkoorstra</a></td><td>167</td></tr>
         <tr><td>24</td><td><a href="https://lichess.org/@/sathsaradissanayakee" target="_blank">sathsaradissanayakee</a></td><td>163</td></tr>
         <tr><td>25</td><td><a href="https://lichess.org/@/ash7714" target="_blank">ash7714</a></td><td>162</td></tr>
-        <tr><td>26</td><td><a href="https://lichess.org/@/   zhirafka  " target="_blank">   zhirafka  </a></td><td>158</td></tr>
-        <tr><td>27</td><td><a href="https://lichess.org/@/ spatioknight6        " target="_blank"> spatioknight6        </a></td><td>140</td></tr>
+        <tr><td>26</td><td><a href="https://lichess.org" target="_blank">zhirafka</a></td><td>158</td></tr>
+        <tr><td>27</td><td><a href="https://lichess.org" target="_blank">spatioknight6</a></td><td>140</td></tr>
         <tr><td>28</td><td><a href="https://lichess.org/@/Yearnforyuna" target="_blank">Yearnforyuna</a></td><td>121</td></tr>
         <tr><td>29</td><td><a href="https://lichess.org/@/MONKIELIKECHESS" target="_blank">MONKIELIKECHESS</a></td><td>118</td></tr>
-        <tr><td>30</td><td><a href="https://lichess.org/@/   Chotu2                    " target="_blank">   Chotu2                    </a></td><td>107</td></tr>
+        <tr><td>30</td><td><a href="https://lichess.org" target="_blank">Chotu2</a></td><td>107</td></tr>
         <tr><td>31</td><td><a href="https://lichess.org/@/Krishnarithik" target="_blank">Krishnarithik</a></td><td>88</td></tr>
-        <tr><td>32</td><td><a href="https://lichess.org/@/ arjunarora1208    " target="_blank"> arjunarora1208    </a></td><td>82</td></tr>
-        <tr><td>33</td><td><a href="https://lichess.org/@/Pathelatharv " target="_blank">Pathelatharv </a></td><td>82</td></tr>
-        <tr><td>34</td><td><a href="https://lichess.org/@/    uijh  " target="_blank">    uijh  </a></td><td>69</td></tr>
-        <tr><td>35</td><td><a href="https://lichess.org/@/   sammy2013vn  " target="_blank">   sammy2013vn  </a></td><td>67</td></tr>
-        <tr><td>36</td><td><a href="https://lichess.org/@/The_Cricketer" target="_blank">The_Cricketer</a></td><td>67</td></tr>
-        <tr><td>37</td><td><a href="https://lichess.org/@/MR-Rivy" target="_blank">MR-Rivy</a></td><td>66</td></tr>
-        <tr><td>38</td><td><a href="https://lichess.org/@/Thelonewolff" target="_blank">Thelonewolff</a></td><td>65</td></tr>
-        <tr><td>39</td><td><a href="https://lichess.org/@/   TGAinVaibhavGrand " target="_blank">   TGAinVaibhavGrand </a></td><td>62</td></tr>
-        <tr><td>40</td><td><a href="https://lichess.org/@/   onlyvariantslover  " target="_blank">   onlyvariantslover  </a></td><td>55</td></tr>
-        <tr><td>41</td><td><a href="https://lichess.org/@/   afteralongtimeRK  " target="_blank">   afteralongtimeRK  </a></td><td>55</td></tr>
-        <tr><td>42</td><td><a href="https://lichess.org/@/iduenasmyk" target="_blank">iduenasmyk</a></td><td>53</td></tr>
-        <tr><td>43</td><td><a href="https://lichess.org/@/Gautham_A" target="_blank">Gautham_A</a></td><td>53</td></tr>
-        <tr><td>44</td><td><a href="https://lichess.org/@/   Ok_oleksandr  " target="_blank">   Ok_oleksandr  </a></td><td>44</td></tr>
-        <tr><td>45</td><td><a href="https://lichess.org/@/verdance" target="_blank">verdance</a></td><td>43</td></tr>
-        <tr><td>46</td><td><a href="https://lichess.org/@/ jerdenga                " target="_blank"> jerdenga                </a></td><td>41</td></tr>
-        <tr><td>47</td><td><a href="https://lichess.org/@/ Draakerror          " target="_blank"> Draakerror          </a></td><td>40</td></tr>
-        <tr><td>48</td><td><a href="https://lichess.org/@/  geniusloop " target="_blank">  geniusloop </a></td><td>39</td></tr>
-        <tr><td>49</td><td><a href="https://lichess.org/@/   virat999                 " target="_blank">   virat999                 </a></td><td>38</td></tr>
-        <tr><td>50</td><td><a href="https://lichess.org/@/   bazsalikom15 " target="_blank">   bazsalikom15 </a></td><td>32</td></tr>
-        <tr><td>51</td><td><a href="https://lichess.org/@/vidulaBandara" target="_blank">vidulaBandara</a></td><td>32</td></tr>
-        <tr><td>52</td><td><a href="https://lichess.org/@/   royalmainiac   " target="_blank">   royalmainiac   </a></td><td>31</td></tr>
-        <tr><td>53</td><td><a href="https://lichess.org/@/Kante_01 " target="_blank">Kante_01 </a></td><td>31</td></tr>
-        <tr><td>54</td><td><a href="https://lichess.org/@/   sanjanaDeara      " target="_blank">   sanjanaDeara      </a></td><td>30</td></tr>
-        <tr><td>55</td><td><a href="https://lichess.org/@/DarK_07" target="_blank">DarK_07</a></td><td>30</td></tr>
-        <tr><td>56</td><td><a href="https://lichess.org/@/ sathsara                  " target="_blank"> sathsara                  </a></td><td>29</td></tr>
-        <tr><td>57</td><td><a href="https://lichess.org/@/David_King_Of_Chess" target="_blank">David_King_Of_Chess</a></td><td>29</td></tr>
-        <tr><td>58</td><td><a href="https://lichess.org/@/  supermat_2010  " target="_blank">  supermat_2010  </a></td><td>28</td></tr>
-        <tr><td>59</td><td><a href="https://lichess.org/@/  magnuschase1234  " target="_blank">  magnuschase1234  </a></td><td>26</td></tr>
-        <tr><td>56</td><td><a href="https://lichess.org/@/vihay" target="_blank">vihay</a></td><td>26</td></tr>
-        <tr><td>57</td><td><a href="https://lichess.org/@/ MIRON-2015         " target="_blank"> MIRON-2015         </a></td><td>25</td></tr>
-        <tr><td>58</td><td><a href="https://lichess.org/@/deniszbalkankezik" target="_blank">deniszbalkankezik</a></td><td>24</td></tr>
-        <tr><td>59</td><td><a href="https://lichess.org/@/ Ivanchu26   " target="_blank"> Ivanchu26   </a></td><td>24</td></tr>
-        <tr><td>60</td><td><a href="https://lichess.org/@/GKR_gabriel" target="_blank">GKR_gabriel</a></td><td>24</td></tr>
-        <tr><td>61</td><td><a href="https://lichess.org/@/devansh2008" target="_blank">devansh2008</a></td><td>24</td></tr>
-        <tr><td>62</td><td><a href="https://lichess.org/@/    chesschamp1247 " target="_blank">    chesschamp1247 </a></td><td>23</td></tr>
-        <tr><td>63</td><td><a href="https://lichess.org/@/    aanj_23    " target="_blank">    aanj_23    </a></td><td>21</td></tr>
-        <tr><td>64</td><td><a href="https://lichess.org/@/Telecaster12" target="_blank">Telecaster12</a></td><td>21</td></tr>
-        <tr><td>65</td><td><a href="https://lichess.org/@/Passionate_player" target="_blank">Passionate_player</a></td><td>20</td></tr>
-        <tr><td>66</td><td><a href="https://lichess.org/@/Peeyush_Sonkar" target="_blank">Peeyush_Sonkar</a></td><td>20</td></tr>
-        <tr><td>67</td><td><a href="https://lichess.org/@/  supermozg24   " target="_blank">  supermozg24   </a></td><td>19</td></tr>
-        <tr><td>68</td><td><a href="https://lichess.org/@/    makapabl4           " target="_blank">    makapabl4           </a></td><td>18</td></tr>
-        <tr><td>69</td><td><a href="https://lichess.org/@/   Ahmbed pro0_x" target="_blank">   Ahmbed pro0_x</a></td><td>17</td></tr>
-        <tr><td>70</td><td><a href="https://lichess.org/@/metralletaaaa" target="_blank">metralletaaaa</a></td><td>17</td></tr>
-        <tr><td>71</td><td><a href="https://lichess.org/@/Drakske" target="_blank">Drakske</a></td><td>17</td></tr>
-        <tr><td>72</td><td><a href="https://lichess.org/@/Theomontabert" target="_blank">Theomontabert</a></td><td>16</td></tr>
-        <tr><td>73</td><td><a href="https://lichess.org/@/Telecaster12" target="_blank">Telecaster12</a></td><td>15</td></tr>
-        <tr><td>74</td><td><a href="https://lichess.org/@/    kirsan2014            " target="_blank">    kirsan2014            </a></td><td>15</td></tr>
-        <tr><td>75</td><td><a href="https://lichess.org/@/sarwika" target="_blank">sarwika</a></td><td>15</td></tr>
-        <tr><td>76</td><td><a href="https://lichess.org/@/Gleb_Momot" target="_blank">Gleb_Momot</a></td><td>15</td></tr>
-        <tr><td>77</td><td><a href="https://lichess.org/@/ vishahans         " target="_blank"> vishahans         </a></td><td>14</td></tr>
-        <tr><td>78</td><td><a href="https://lichess.org/@/DavidGaye " target="_blank">DavidGaye </a></td><td>13</td></tr>
-        <tr><td>79</td><td><a href="https://lichess.org/@/patelAtharv" target="_blank">patelAtharv</a></td><td>13</td></tr>
-        <tr><td>80</td><td><a href="https://lichess.org/@/NKchessthanhtuyen " target="_blank">NKchessthanhtuyen </a></td><td>12</td></tr>
-        <tr><td>81</td><td><a href="https://lichess.org/@/Chenn-rccc" target="_blank">Chenn-rccc</a></td><td>12</td></tr>
-        <tr><td>82</td><td><a href="https://lichess.org/@/  manoss " target="_blank">  manoss </a></td><td>11</td></tr>
-        <tr><td>83</td><td><a href="https://lichess.org/@/Shadow_lord01" target="_blank">Shadow_lord01</a></td><td>11</td></tr>
-        <tr><td>84</td><td><a href="https://lichess.org/@/OSCARSM80" target="_blank">OSCARSM80</a></td><td>11</td></tr>
-        <tr><td>85</td><td><a href="https://lichess.org/@/CiberChess_76" target="_blank">CiberChess_76</a></td><td>11</td></tr>
-        <tr><td>86</td><td><a href="https://lichess.org/@/syedfathi2525" target="_blank">syedfathi2525</a></td><td>10</td></tr>
-        <tr><td>87</td><td><a href="https://lichess.org/@/  DanielV16  " target="_blank">  DanielV16  </a></td><td>10</td></tr>
-        <tr><td>88</td><td><a href="https://lichess.org/@/ arham                " target="_blank"> arham                </a></td><td>9</td></tr>
-        <tr><td>89</td><td><a href="https://lichess.org/@/Aviraj09" target="_blank">Aviraj09</a></td><td>9</td></tr>
-        <tr><td>90</td><td><a href="https://lichess.org/@/czarodziej_pl" target="_blank">czarodziej_pl</a></td><td>9</td></tr>
-        <tr><td>91</td><td><a href="https://lichess.org/@/siddhanplayschess" target="_blank">siddhanplayschess</a></td><td>9</td></tr>
-        <tr><td>92</td><td><a href="https://lichess.org/@/mrGamingGoat" target="_blank">mrGamingGoat</a></td><td>8</td></tr>
-        <tr><td>93</td><td><a href="https://lichess.org/@/SeYhU699" target="_blank">SeYhU699</a></td><td>7</td></tr>
-        <tr><td>94</td><td><a href="https://lichess.org/@/mozambeeky" target="_blank">mozambeeky</a></td><td>7</td></tr>
-        <tr><td>95</td><td><a href="https://lichess.org/@/swayamrathi" target="_blank">swayamrathi</a></td><td>7</td></tr>
-        <tr><td>96</td><td><a href="https://lichess.org/@/ nathanaelanischchess" target="_blank"> nathanaelanischchess</a></td><td>6</td></tr>
-        <tr><td>97</td><td><a href="https://lichess.org/@/  umarkhaleel " target="_blank">  umarkhaleel </a></td><td>6</td></tr>
-        <tr><td>98</td><td><a href="https://lichess.org/@/   chess-developer  " target="_blank">   chess-developer  </a></td><td>6</td></tr>
-        <tr><td>99</td><td><a href="https://lichess.org/@/amworld" target="_blank">amworld</a></td><td>6</td></tr>
-        <tr><td>100</td><td><a href="https://lichess.org/@/CB_AmairaB" target="_blank">CB_AmairaB</a></td><td>6</td></tr>
-        <tr><td>101</td><td><a href="https://lichess.org/@/kaiserniklas" target="_blank">kaiserniklas</a></td><td>5</td></tr>
-        <tr><td>102</td><td><a href="https://lichess.org/@/sontung_nor" target="_blank">sontung_nor</a></td><td>4</td></tr>
-        <tr><td>103</td><td><a href="https://lichess.org/@/thebreseker" target="_blank">thebreseker</a></td><td>4</td></tr>
-        <tr><td>104</td><td><a href="https://lichess.org/@/mark_Dmitriev-2017" target="_blank">mark_Dmitriev-2017</a></td><td>4</td></tr>
-        <tr><td>105</td><td><a href="https://lichess.org/@/Jayan52655" target="_blank">Jayan52655</a></td><td>4</td></tr>
-        <tr><td>106</td><td><a href="https://lichess.org/@/TheUnknownGuyReborn" target="_blank">TheUnknownGuyReborn</a></td><td>4</td></tr>
-        <tr><td>107</td><td><a href="https://lichess.org/@/Vasil_Bazilio-2016" target="_blank">Vasil_Bazilio-2016</a></td><td>4</td></tr>
-        <tr><td>108</td><td><a href="https://lichess.org/@/aadityakh" target="_blank">aadityakh</a></td><td>3</td></tr>
-        <tr><td>109</td><td><a href="https://lichess.org/@/namiduwijesinghe2013" target="_blank">namiduwijesinghe2013</a></td><td>3</td></tr>
-        <tr><td>110</td><td><a href="https://lichess.org/@/Jasondenga" target="_blank">Jasondenga</a></td><td>3</td></tr>
-        <tr><td>111</td><td><a href="https://lichess.org/@/YaroslavKuzmich_2016" target="_blank">YaroslavKuzmich_2016</a></td><td>3</td></tr>
-        <tr><td>112</td><td><a href="https://lichess.org/@/MiekoDeVries123" target="_blank">MiekoDeVries123</a></td><td>3</td></tr>
-        <tr><td>113</td><td><a href="https://lichess.org/@/david9426" target="_blank">david9426</a></td><td>3</td></tr>
-        <tr><td>114</td><td><a href="https://lichess.org/@/arpanghosh" target="_blank">arpanghosh</a></td><td>3</td></tr>
-        <tr><td>115</td><td><a href="https://lichess.org/@/Siddiq1911" target="_blank">Siddiq1911</a></td><td>3</td></tr>
-        <tr><td>116</td><td><a href="https://lichess.org/@/Navilanaca" target="_blank">Navilanaca</a></td><td>3</td></tr>
-        <tr><td>117</td><td><a href="https://lichess.org/@/Nikolay-2018" target="_blank">Nikolay-2018</a></td><td>3</td></tr>
-        <tr><td>118</td><td><a href="https://lichess.org/@/vasilya7" target="_blank">vasilya7</a></td><td>2</td></tr>
-        <tr><td>119</td><td><a href="https://lichess.org/@/Jemilisgood" target="_blank">Jemilisgood</a></td><td>2</td></tr>
-        <tr><td>120</td><td><a href="https://lichess.org/@/speedy_chess_player" target="_blank">speedy_chess_player</a></td><td>2</td></tr>
-        <tr><td>121</td><td><a href="https://lichess.org/@/sahitvarma15" target="_blank">sahitvarma15</a></td><td>2</td></tr>
-        <tr><td>122</td><td><a href="https://lichess.org/@/PriyanshiShivadas" target="_blank">PriyanshiShivadas</a></td><td>2</td></tr>
-        <tr><td>123</td><td><a href="https://lichess.org/@/pomeranets_Artem" target="_blank">pomeranets_Artem</a></td><td>2</td></tr>
-        <tr><td>124</td><td><a href="https://lichess.org/@/Kanishjain1603" target="_blank">Kanishjain1603</a></td><td>2</td></tr>
-        <tr><td>125</td><td><a href="https://lichess.org/@/KobeFort" target="_blank">KobeFort</a></td><td>2</td></tr>
-        <tr><td>126</td><td><a href="https://lichess.org/@/BJCHECKMATESMASH" target="_blank">BJCHECKMATESMASH</a></td><td>2</td></tr>
-        <tr><td>127</td><td><a href="https://lichess.org/@/saaNYY" target="_blank">saaNYY</a></td><td>2</td></tr>
-        <tr><td>128</td><td><a href="https://lichess.org/@/fidechess15" target="_blank">fidechess15</a></td><td>2</td></tr>
-        <tr><td>129</td><td><a href="https://lichess.org/@/Rk_Master01" target="_blank">Rk_Master01</a></td><td>2</td></tr>
-        <tr><td>130</td><td><a href="https://lichess.org/@/Dima050615" target="_blank">Dima050615</a></td><td>1</td></tr>
-        <tr><td>131</td><td><a href="https://lichess.org/@/Zayan_123" target="_blank">Zayan_123</a></td><td>1</td></tr>
-
-
-      </tr>
+        <tr><td>32</td><td><a href="https://lichess.org" target="_blank">arjunarora1208</a></td><td>82</td></tr>
+        <tr><td>33</td><td><a href="https://lichess.org/@/Pathelatharv" target="_blank">Pathelatharv</a></td><td>82</td></tr>
+        <tr><td>34</td><td><a href="https://lichess.org" target="_blank">uijh</a></td><td>69</td></tr>
+        <tr><td>35</td><td><a href="https://lichess.org" target="_blank">sammy2013vn</a></td><td>50</td></tr>
+      </tbody>
     </table>
-    <br>
-    <br>
-    <br>
-    <h2><p style="text-align:center;">Dragons inner team batlles Leaderboard</p></h2>
-    <table border="1" style="border-collapse:collapse; width: 100%; text-align: center;">
-      <tr>
-        <th>Rank</th>
-        <th>Player</th>
-        <th>First Places</th>
-        <th>Second Places</th>
-        <th>Third Places</th>
-        <th>Points</th>
-      </tr>
-    </table>
-    <br>
-    <br>
-    More suggestions for cool leaderboards? Click on:
-    <a href="https://lichess.org/@/toverdraak">me</a> 
-    <br>
+
+    <footer style="text-align: center; margin-top: 40px; color: #333; font-size: 0.9em;">
+      <hr style="margin-bottom: 10px;">
+      © 2022 RK Dragons Elite Team | Created by ToverDraak 🐉
+    </footer>
   </body>
 </html>
-
-
