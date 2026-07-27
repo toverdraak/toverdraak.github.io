@@ -3,13 +3,12 @@
   <head>
     <style>
       body {
-        /* Dezelfde mooie achtergrond als de homepage */
         background: linear-gradient(135deg, #cce7f0 0%, #add8e6 100%);
         background-repeat: repeat;
         background-attachment: fixed;
         margin: 0;
         padding: 20px;
-        font-family: sans-serif; /* Moderner lettertype */
+        font-family: sans-serif;
         color: #333;
       }
       
@@ -24,7 +23,7 @@
 
       a:hover {
         color: darkred;
-        text-decoration: underline; /* Subtiele indicatie dat het een link is */
+        text-decoration: underline;
       }
       
       h1, h2 {
@@ -34,17 +33,82 @@
       h1 {
         margin-bottom: 30px;
       }
+
+      /* --- PODIUM STYLING --- */
+      .podium-container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end; /* Keeps the bars on the ground */
+        gap: 15px;
+        max-width: 600px;
+        margin: 20px auto 40px auto;
+        height: 180px; /* Fixed height for the podium */
+      }
+
+      .podium-place {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 140px;
+        text-align: center;
+      }
+
+      /* Names above the bars */
+      .podium-user {
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 5px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+      }
       
-      /* Moderne tabel styling */
+      .podium-score {
+        font-size: 12px;
+        color: #555;
+        margin-bottom: 5px;
+      }
+
+      /* The physical bars */
+      .podium-bar {
+        width: 100%;
+        border-radius: 8px 8px 0 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      }
+
+      /* Different heights and gradient colors per position */
+      .place-1 {
+        height: 110px;
+        background: linear-gradient(to top, #e5a93b, #ffd700); /* Gold */
+      }
+
+      .place-2 {
+        height: 80px;
+        background: linear-gradient(to top, #b0b0b0, #cccccc); /* Silver */
+      }
+
+      .place-3 {
+        height: 55px;
+        background: linear-gradient(to top, #a05a2c, #cd7f32); /* Bronze */
+      }
+      
+      /* --- TABLE STYLING --- */
       .leaderboard-table {
         border-collapse: collapse;
         width: 100%;
-        max-width: 600px; /* Zorgt dat de tabel compact en leesbaar blijft */
-        margin: 0 auto 50px auto; /* Centreert de tabel en geeft ruimte aan de onderkant */
+        max-width: 600px;
+        margin: 0 auto 50px auto;
         background-color: white;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Zachte schaduw */
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         border-radius: 8px;
-        overflow: hidden; /* Zorgt dat de hoeken mooi rond blijven */
+        overflow: hidden;
       }
       
       .leaderboard-table th, 
@@ -59,12 +123,10 @@
         font-weight: bold;
       }
       
-      /* Zebra-strepen: elke even rij krijgt een heel lichtgrijze achtergrond */
       .leaderboard-table tr:nth-child(even) {
         background-color: #f9f9f9;
       }
       
-      /* Subtiele highlight als je met de muis over een rij beweegt */
       .leaderboard-table tr:hover {
         background-color: #f1f1f1;
       }
@@ -81,6 +143,29 @@
     <h1>Overview of all leaderboards</h1>
     
     <h2>Leaderboard of highest peak ratings</h2>
+
+    <!-- PODIUM LIST 1 -->
+    <div class="podium-container">
+      <!-- 2nd Place -->
+      <div class="podium-place">
+        <div class="podium-user"><a href="https://lichess.org" target="_blank">M-A01</a></div>
+        <div class="podium-score">2519</div>
+        <div class="podium-bar place-2">2</div>
+      </div>
+      <!-- 1st Place -->
+      <div class="podium-place">
+        <div class="podium-user"><a href="https://lichess.org" target="_blank">racing_kings_bot</a></div>
+        <div class="podium-score">2603</div>
+        <div class="podium-bar place-1">1</div>
+      </div>
+      <!-- 3rd Place -->
+      <div class="podium-place">
+        <div class="podium-user"><a href="https://lichess.org" target="_blank">eNErGyOFbEiNGbOT</a></div>
+        <div class="podium-score">2499</div>
+        <div class="podium-bar place-3">3</div>
+      </div>
+    </div>
+
     <table class="leaderboard-table">
       <thead>
         <tr>
@@ -100,20 +185,43 @@
         <tr><td>8</td><td><a href="https://lichess.org/@/cr0c0d1l3" target="_blank">cr0c0d1l3</a></td><td>2422</td></tr>
         <tr><td>9</td><td><a href="https://lichess.org/@/OSCARSM80" target="_blank">OSCARSM80</a></td><td>2402</td></tr>
         <tr><td>10</td><td><a href="https://lichess.org/@/Peanutbutter12345" target="_blank">Peanutbutter12345</a></td><td>2380</td></tr>
-        <tr><td>11</td><td><a href="https://lichess.org/@/RKWC_Legend_Dragon" target="_blank">RKWC_Legend_Dragon</a></td><td>2378</td></tr>
+        <tr><td>11</td><td><a href="https://lichess.org/@/RKWC_Legend_Dragon"target="_blank">RKWC_Legend_Dragon</a></td><td>2378</td></tr>
         <tr><td>12</td><td><a href="https://lichess.org/@/Gleb_Momot" target="_blank">Gleb_Momot</a></td><td>2376</td></tr>
-        <tr><td>13</td><td><a href="https://lichess.org/@/CemalZiya027" target="_blank">CemalZiya027</a></td><td>2358</td></tr>
+        <tr><td>13</td><td><a href="https://lichess.org/@/CemalZiya02" target="_blank">CemalZiya027</a></td><td>2358</td></tr>
         <tr><td>14</td><td><a href="https://lichess.org/@/Gautham_A" target="_blank">Gautham_A</a></td><td>2350</td></tr>
         <tr><td>15</td><td><a href="https://lichess.org/@/alston_b0y" target="_blank">alston_b0y</a></td><td>2345</td></tr>
         <tr><td>16</td><td><a href="https://lichess.org/@/LC-Racing" target="_blank">LC-Racing</a></td><td>2343</td></tr>
         <tr><td>17</td><td><a href="https://lichess.org/@/Rithik_RKWC" target="_blank">Rithik_RKWC</a></td><td>2341</td></tr>
         <tr><td>18</td><td><a href="https://lichess.org/@/sachmaty8" target="_blank">sachmaty8</a></td><td>2337</td></tr>
         <tr><td>19</td><td><a href="https://lichess.org/@/GKR_gabriel" target="_blank">GKR_gabriel</a></td><td>2330</td></tr>
-        <tr><td>20</td><td><a href="https://lichess.org/@/cemalziya61" target="_blank">cemalziya61</a></td><td>2327</td></tr>
+        <tr><td>20</td><td><a href="https://lichess.org/@/cemalziya61<" target="_blank">cemalziya61</a></td><td>2327</td></tr>
       </tbody>
     </table>
 
     <h2>Leaderboard of most points gained in team tournaments</h2>
+
+    <!-- PODIUM LIST 2 -->
+    <div class="podium-container">
+      <!-- 2nd Place -->
+      <div class="podium-place">
+        <div class="podium-user"><a href="https://lichess.org" target="_blank">SpacialChess</a></div>
+        <div class="podium-score">1763</div>
+        <div class="podium-bar place-2">2</div>
+      </div>
+      <!-- 1st Place -->
+      <div class="podium-place">
+        <div class="podium-user"><a href="https://lichess.org" target="_blank">toverdraak</a></div>
+        <div class="podium-score">4020</div>
+        <div class="podium-bar place-1">1</div>
+      </div>
+      <!-- 3rd Place -->
+      <div class="podium-place">
+        <div class="podium-user"><a href="https://lichess.org" target="_blank">annanddeepu</a></div>
+        <div class="podium-score">1747</div>
+        <div class="podium-bar place-3">3</div>
+      </div>
+    </div>
+
     <table class="leaderboard-table">
       <thead>
         <tr>
@@ -124,18 +232,18 @@
       </thead>
       <tbody>
         <tr><td>1</td><td><a href="https://lichess.org/@/toverdraak" target="_blank">toverdraak</a></td><td>4020</td></tr>
-        <tr><td>2</td><td><a href="https://lichess.org/@/ SpacialChess        " target="_blank"> SpacialChess        </a></td><td>1763</td></tr>
-        <tr><td>3</td><td><a href="https://lichess.org/@/     annanddeepu       " target="_blank">     annanddeepu       </a></td><td>1747</td></tr>
-        <tr><td>4</td><td><a href="https://lichess.org/@/    Ritvikv15 " target="_blank">    Ritvikv15 </a></td><td>1672</td></tr>
-        <tr><td>5</td><td><a href="https://lichess.org/@/ kingsofkings       " target="_blank"> kingsofkings       </a></td><td>1240</td></tr>
-        <tr><td>6</td><td><a href="https://lichess.org/@/ gmaaragm" target="_blank"> gmaaragm</a></td><td>950</td></tr>
-        <tr><td>7</td><td><a href="https://lichess.org/@/ CemalZiya027  " target="_blank"> CemalZiya027  </a></td><td>848</td></tr>
-        <tr><td>8</td><td><a href="https://lichess.org/@/  Advik2003" target="_blank">  Advik2003</a></td><td>728</td></tr>
+        <tr><td>2</td><td><a href="https://lichess.org/@/SpacialChess" target="_blank">SpacialChess</a></td><td>1763</td></tr>
+        <tr><td>3</td><td><a href="https://lichess.org/@/annanddeepu" target="_blank">annanddeepu</a></td><td>1747</td></tr>
+        <tr><td>4</td><td><a href="https://lichess.org/@/Ritvikv15" target="_blank">Ritvikv15</a></td><td>1672</td></tr>
+        <tr><td>5</td><td><a href="https://lichess.org/@/kingsofkings" target="_blank">kingsofkings</a></td><td>1240</td></tr>
+        <tr><td>6</td><td><a href="https://lichess.org/@/gmaaragm" target="_blank">gmaaragm</a></td><td>950</td></tr>
+        <tr><td>7</td><td><a href="https://lichess.org/@/CemalZiya027" target="_blank">CemalZiya027</a></td><td>848</td></tr>
+        <tr><td>8</td><td><a href="https://lichess.org/@/Advik2003" target="_blank">Advik2003</a></td><td>728</td></tr>
         <tr><td>9</td><td><a href="https://lichess.org/@/ash7714" target="_blank">ash7714</a></td><td>698</td></tr>
-        <tr><td>10</td><td><a href="https://lichess.org/@/     ollieparker" target="_blank">     ollieparker</a></td><td>697</td></tr>
-        <tr><td>11</td><td><a href="https://lichess.org/@/ CagiNL                   " target="_blank"> CagiNL                   </a></td><td>604</td></tr>
-        <tr><td>12</td><td><a href="https://lichess.org/@/ Lahan_2014    " target="_blank"> Lahan_2014    </a></td><td>601</td></tr>
-        <tr><td>13</td><td><a href="https://lichess.org/@/   aarish2805  " target="_blank">   aarish2805  </a></td><td>524</td></tr>
+        <tr><td>10</td><td><a href="https://lichess.org/@/ollieparker" target="_blank">ollieparker</a></td><td>697</td></tr>
+        <tr><td>11</td><td><a href="https://lichess.org/@/CagiNL" target="_blank">CagiNL</a></td><td>604</td></tr>
+        <tr><td>12</td><td><a href="https://lichess.org/@/Lahan_2014" target="_blank">Lahan_2014</a></td><td>601</td></tr>
+        <tr><td>13</td><td><a href="https://lichess.org/@/aarish2805" target="_blank">aarish2805</a></td><td>524</td></tr>
         <tr><td>14</td><td><a href="https://lichess.org/@/Astrocat789" target="_blank">Astrocat789</a></td><td>349</td></tr>
         <tr><td>15</td><td><a href="https://lichess.org/@/deydinov" target="_blank">deydinov</a></td><td>308</td></tr>
         <tr><td>16</td><td><a href="https://lichess.org/@/cr0c0d1l3" target="_blank">cr0c0d1l3</a></td><td>291</td></tr>
