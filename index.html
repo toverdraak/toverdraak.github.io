@@ -1,98 +1,186 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <title>RK Dragons Elite Team</title>
     <style>
       body {
-        background: linear-gradient(135deg, #cce7f0 0%, #add8e6 100%);
-        background-repeat: repeat;
+        /* Gloednieuwe, epische 'Dragon' achtergrond: van diep antraciet naar koningsblauw */
+        background: linear-gradient(135deg, #1a1c23 0%, #0f2042 100%);
         background-attachment: fixed;
+        margin: 0;
+        padding: 40px 20px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Professioneel lettertype */
+        color: #e0e6ed; /* Zachte witte tekstkleur voor perfect contrast */
+        line-height: 1.6;
       }
-      a {
-        color: black; 
-        text-decoration: none; 
+      
+      /* Strakke navigatiebalk */
+      nav {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 1.1em;
+      }
+      
+      nav a {
+        color: #a0aec0;
+        margin: 0 15px;
+        transition: color 0.2s;
+        font-weight: 500;
       }
 
-      a:hover {
-        color: red; 
+      nav a:hover {
+        color: #ff4444;
       }
-     .button-row {
+
+      /* Hoofdcontainer om de content mooi te centreren */
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.03); /* Subtiele transparante glas-laag */
+        padding: 40px;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      
+      h1 {
+        text-align: center;
+        margin-top: 0;
+        font-size: 2.8em;
+        letter-spacing: 1px;
+      }
+
+      h1 a {
+        color: #ffffff;
+        text-shadow: 0 0 15px rgba(211, 47, 47, 0.6); /* Rode gloed rondom de titel */
+        transition: color 0.3s;
+      }
+
+      h1 a:hover {
+        color: #ff4444;
+      }
+
+      h2 {
+        text-align: center;
+        color: #ff4444; /* Rode accentkleur */
+        font-size: 1.5em;
+        font-weight: 400;
+        margin-bottom: 30px;
+      }
+
+      .intro-text {
+        font-size: 1.1em;
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto 40px auto;
+        color: #cbd5e0;
+      }
+
+      .intro-text a {
+        color: #ff4444;
+        text-decoration: underline;
+        font-weight: bold;
+      }
+
+      .intro-text a:hover {
+        color: #ff7777;
+      }
+
+      /* Moderne flexbox rij voor de knoppen */
+      .button-row {
         display: flex;
-        gap: 40px;
+        gap: 30px;
         flex-wrap: wrap;
         justify-content: center;
-        margin: 30px 0;
+        margin: 40px 0;
       }
       
       .button-row a {
         text-decoration: none;
       }
       
+      /* De knoppen zijn nu 3D 'cards' geworden */
       .image-button {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 20px;
-        width: 400px;
-        height: 250px;
-        background-color: #d32f2f; 
-        color: black; /* Aangepast van white naar black */
-        font-size: 20px;
+        padding: 30px;
+        width: 320px;
+        height: 180px;
+        background: linear-gradient(135deg, #d32f2f 0%, #9a1f1f 100%); /* Rood verloop */
+        color: white; /* Tekst is wit gemaakt voor uitstekende leesbaarheid op rood */
+        font-size: 1.1em;
+        font-weight: 600;
         border: none;
-        border-radius: 15px;
+        border-radius: 12px;
         cursor: pointer;
-        transition: background-color 0.3s;
+        box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);
+        transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
         text-align: center;
       }
       
+      /* Subtiel zweef-effect wanneer je over de knop beweegt */
       .image-button:hover {
-        background-color: #b71c1c; 
+        transform: translateY(-4px);
+        box-shadow: 0 8px 25px rgba(211, 47, 47, 0.6);
+        background: linear-gradient(135deg, #ff4444 0%, #b71c1c 100%);
       }
       
-      .image-button img {
-        max-width: 190px;
-        height: auto;
-        margin-bottom: 10px;
+      footer {
+        text-align: center;
+        margin-top: 60px;
+        color: #718096;
+        font-size: 0.9em;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 20px;
       }
-      
     </style>
   </head>
   <body>
+
     <nav>
-      <a href="index.html">Home</a> |
-      <a href="leaderboard.html">Leaderboard</a> |
-      <a href="tournaments.html">Tournaments</a> |
+      <a href="index.html">Home</a> 
+      <a href="leaderboard.html">Leaderboard</a> 
+      <a href="tournaments.html">Tournaments</a>
     </nav>
-    <hr style="margin-bottom: 10px;">
-    <h1 style="text-align:center;">
-      <a href="https://lichess.org">
-      RK Dragons Elite Team
-      </a>
-    </h1>
-    <h2><p style="text-align:center;">A home for all Dragons who enjoy RK</p></h2>
-    <hr style="border: none; height: 2px; background: #888; width: 70%; margin: auto;">
-    <br>
-    Welcome, this is the homepage of the Rk Dragons website. Here you can learn more about the team, its members and much more. 
-    Or use the buttons below (also found in the top left corner) to look at some different things this website features. 
-    Ps: If you haven't already, you can join the team by clicking on this <a href="https://lichess.org">text</a> or by clicking the Title ("RK Dragons Elite Team").
-    <h2><p style="text-align:center;">RK Dragons Elite Team</p></h2>
-    <div class="button-row">
-      <a href="leaderboard.html">
-        <button class="image-button">
-          <span>Go to the leaderboards of our top contributors</span>
-        </button>
-      </a>
-      <a href="tournaments.html">
-        <button class="image-button">
-          <span>Past teamtournaments</span>
-        </button>
-      </a>
+
+    <div class="container">
+      <h1>
+        <a href="https://lichess.org">RK Dragons Elite Team</a>
+      </h1>
+      <h2>A home for all Dragons who enjoy RK</h2>
+      
+      <p class="intro-text">
+        Welcome, this is the homepage of the RK Dragons website. Here you can learn more about the team, its members and much more. 
+        Or use the buttons below to look at some different things this website features. 
+        <br><br>
+        PS: If you haven't already, you can join the team by clicking on this 
+        <a href="https://lichess.org">text</a> or by clicking the Title ("RK Dragons Elite Team").
+      </p>
+
+      <div class="button-row">
+        <a href="leaderboard.html">
+          <button class="image-button">
+            <span>Go to the leaderboards of our top contributors</span>
+          </button>
+        </a>
+        <a href="tournaments.html">
+          <button class="image-button">
+            <span>Past team tournaments</span>
+          </button>
+        </a>
+      </div>
+      
+      <p style="text-align: center; color: #a0aec0; font-style: italic; margin-top: 30px;">
+        This team was created by Toverdraak (27/5/2022)...
+      </p>
+
+      <footer>
+        © 2022 RK Dragons Elite Team | Created by ToverDraak 🐉
+      </footer>
     </div>
-    <br> <br>
-    This team was created by Toverdraak (27/5/2022)...
-    <footer style="text-align: center; margin-top: 40px; color: #333; font-size: 0.9em;">
-      <hr style="margin-bottom: 10px;">
-      © 2022 RK Dragons Elite Team | Created by ToverDraak 🐉
-    </footer>
+
   </body>
 </html>
